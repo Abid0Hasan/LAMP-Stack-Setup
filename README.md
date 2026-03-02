@@ -386,8 +386,8 @@ sudo mv /var/www/html/projectfolder/* /var/www/html/
 ## After Setup Configuration (LAMP)
 1. 🌐 Apache Default Configuration
 ```
-sudo a2dismod status autoindex  # অপ্রয়োজনীয় module বন্ধ
-sudo systemctl restart apache2
+	sudo a2dismod status autoindex  # অপ্রয়োজনীয় module বন্ধ
+	sudo systemctl restart apache2
 ```
 2. 🐘 PHP Opcode Cache
 ```   
@@ -395,9 +395,9 @@ sudo systemctl restart apache2
 ```
 এই লাইনগুলো যোগ করুন:
 ```
-opcache.enable=1
-opcache.memory_consumption=128
-opcache.max_accelerated_files=4000
+	opcache.enable=1
+	opcache.memory_consumption=128
+	opcache.max_accelerated_files=4000
 ```
 3. 📦 GZip Compression
 ```   
