@@ -382,3 +382,31 @@ sudo systemctl restart apache2
 ```
 sudo mv /var/www/html/projectfolder/* /var/www/html/
 ```
+
+## After Setup Configuration (LAMP)
+1. 🌐 Apache Default Configuration
+```
+sudo a2dismod status autoindex  # অপ্রয়োজনীয় module বন্ধ
+sudo systemctl restart apache2
+```
+2. 🐘 PHP Opcode Cache
+```   
+   sudo nano /etc/php/8.x/apache2/php.ini
+```
+এই লাইনগুলো যোগ করুন:
+```
+opcache.enable=1
+opcache.memory_consumption=128
+opcache.max_accelerated_files=4000
+```
+3. 📦 GZip Compression
+```   
+	sudo a2enmod deflate
+	sudo systemctl restart apache2
+```
+4. 🔒 Firewall / UFW ভুল Configuration
+```
+	sudo ufw allow 80
+	sudo ufw allow 443
+	sudo ufw enable
+```
