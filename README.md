@@ -417,5 +417,9 @@ sudo mv /var/www/html/projectfolder/* /var/www/html/
 	ufw allow 60000/tcp
 	chown -R www-data:www-data /var/www/html/websocket
 	sudo -u www-data /usr/bin/php -f /var/www/html/websocket/bin/chatserver.php & ss -tulpn | grep :60000
+```
+## Giving Image Folder Permission
+```
+ 	 chown -R www-data:www-data /var/www/html/application/modules/itemmanage/assets/images/
 ```	
 
